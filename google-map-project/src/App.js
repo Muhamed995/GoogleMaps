@@ -1,6 +1,8 @@
 import React from 'react';
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
-
+import {Modal} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
+import './App.css';
 import {Provider} from 'react-redux';
 import store from './store';
 
@@ -33,9 +35,19 @@ class GoogleMapsContainer extends React.Component {
         console.log(data);
       })
 
-
-
     })
+  }
+
+  onMarkerClosed=(marker)=>{
+if(this.state.showingInfoWindow){
+  this.setState={
+    activeMarker:marker,
+    showingInfoWindow:false
+  }
+}
+console.log('asd');
+
+
   }
 
 
@@ -47,6 +59,7 @@ class GoogleMapsContainer extends React.Component {
       activeMarker:{},
 
     }
+    this.onMarkerClosed = this.onMarkerClosed.bind(this)
   }
 
 
@@ -73,6 +86,14 @@ const data = {locations:[
     width:'50vw',
     height:'75 vh'
   }
+
+  const newStyle= {
+    height: 100,
+  width: 100,
+  margin: 20,
+  textAlign: 'center',
+  display: 'inline-block'
+  }
   return (
     <Provider store={store}>
     <div>
@@ -88,7 +109,7 @@ const data = {locations:[
 
           <Marker key={i}
 
-
+            animation={this.props.google.maps.Animation.BOUNCE}
             position={location.location}
             onClick={this.onMarkerClick}
             name={location.name}
@@ -101,9 +122,24 @@ const data = {locations:[
         <InfoWindow
          marker={this.state.activeMarker}
          visible={this.state.showingInfoWindow}>
-        <div>
-          <h1>{this.state.information}</h1>
-      </div>
+         <Modal.Dialog className='styledModal'>
+             <Modal.Header>
+               <Modal.Title className='defaultFont'>Information Box</Modal.Title>
+             </Modal.Header>
+
+             <Modal.Body >  <div>
+                 <h1 className='defaultFont'>{this.state.information}</h1>
+             </div></Modal.Body>
+
+             <Modal.Footer>
+                <Button onFocus={() => {
+                  console.log(this)
+                }}></Button>
+             </Modal.Footer>
+           </Modal.Dialog>
+
+
+
       </InfoWindow>
 
 
