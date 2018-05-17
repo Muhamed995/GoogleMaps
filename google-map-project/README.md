@@ -13,7 +13,7 @@ Unutar GoogleMapsContainer komponente kreirani su Markeri, InfoWindow koji će n
 
 Projekt je kreiran u cilju ispunjavanja poslovnih obaveza te daljnjeg usavršavanja u React-u.
 
-Osim kreiranja komponenti u React-u, kreiran je i NodeJS Api za "fetch" API koji će nam biti povezani sa React-om te će  se unutar InfoWindow-a  ispisivati osnovni podaci.
+Osim kreiranja komponenti u React-u, kreiran je i NodeJS Api za "fetch" API koji će nam ispisivati "response" u našem markeru koji se nalazi u našem Reactu. Ako postoji response ispisat će se "lat", "lon" i ime date lokacije a ako ne postoji dobit ćemo false.
 
 Povezivanjem NodeJs aplikacije sa React-om je završen glavni dio projekta, nakon toga je trebalo da se testira kako React tako i NodeJS aplikacija. Pri testiranju Node aplikacije korišteno je "mocha" i "chai" dok sam se prilikom testiranja React aplikacije koristio Jest-om.
 
@@ -27,7 +27,8 @@ Projekt se sastoji od dva dijela: React komponenti i NodeJs API aplikacije.
 
 Unutar React komponente pozivamo `npm install` kako bi instalirali dodatne "dependencies" koje će nam biti potrebni u ovom projektu
 Nakon toga pozivamo `npm start` sa kojim pokrećemo naš React projekt
-Tada dobijate pristup vašem localhost-u `http://localhost:3000`
+Tada dobijate pristup vašem localhost-u `http://localhost:3000`.
+
 
 #NODEJS
 
