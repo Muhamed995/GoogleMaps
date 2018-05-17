@@ -7,6 +7,16 @@ create-react-app google-map-project
 npm install google-maps-react
 npm install react-bootstrap
 ```
+INFO (Radi određenih problema koji sa sobom nose skoro sve npm biblioteke za google maps u Reactu predlažem da se u projekt ne instalira najnovija verzija React-a, jer React v16 nije baš kompaktibilan sa npm paketom)
+U package.json postavite vaš react na:
+```bash
+{
+"react": "^15.6.2",
+}
+```
+Nakon toga ponovo pozovete:
+
+`npm install`
 
 Unutar GoogleMapsContainer komponente kreirani su Markeri, InfoWindow koji će nam prikazivati određeni dio mape koja se inicijalno odredila.
 
