@@ -19,3 +19,26 @@ Povezivanjem NodeJs aplikacije sa React-om je završen glavni dio projekta, nako
 
 Osnovna vizija projekta jeste da se inicijalizuje određeni broj markera, koji će se manuelno otvarati klikom te će u tom trenutku da se aktivira NodeJS aplikacija pomoću koje pozivamo API.
 
+## Kako koristiti date fajlove?
+
+Projekt se sastoji od dva dijela: React komponenti i NodeJs API aplikacije.
+
+#REACT
+
+Unutar React komponente pozivamo `npm install` kako bi instalirali dodatne "dependencies" koje će nam biti potrebni u ovom projektu
+Nakon toga pozivamo `npm start` sa kojim pokrećemo naš React projekt
+Tada dobijate pristup vašem localhost-u `http://localhost:3000`
+
+#NODEJS
+
+Nakon pokretanja client side programa sad je na red došao server side
+
+Potrebno instaliranje package-json fajla pomoću `npm init`
+nakon toga pomoću `touch` opcije kreiramo novi js-fajl u programu u kojem ćemo "fetch-ati" naš API
+pristupamo našoj NodeJs aplikaciji pomoću `node server.js`
+Tada dobijate pristup vašem localhost-u `http://localhost:8080`
+
+
+
+
+
